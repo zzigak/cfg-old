@@ -1,24 +1,43 @@
+alias ..="cd .."
 PATH="$HOME/.emacs.d/bin:$PATH"
-PATH="/Applications/MacPorts/Emacs.app/Contents/MacOS:$PATH"
+#PATH="/Applications/MacPorts/Emacs.app/Contents/MacOS:$PATH"
+PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
 
 
-#macchina
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 bindkey -e
+setopt HIST_FIND_NO_DUPS
+
 # End of lines configured by zsh-newuser-install
 #
 #
 autoload -Uz vcs_info
-precmd() { vcs_info }
-zstyle ':vcs_info:git:*' formats '%b '
+autoload -U compinit && compinit
+#zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+#precmd() { vcs_info }
+#zstyle ':vcs_info:git:*' formats '%b '
 
-setopt PROMPT_SUBST
-PROMPT='%F{green}%*%f %F{magenta}%n%f  %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
-
+## PROMPT SETUP
 autoload -U colors && colors	# Load colors
+setopt PROMPT_SUBST
+#PROMPT='%F{green}%*%f %F{magenta}%n%f  %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
+#PROMPT='%F{orange}%n%f %F{green} in %f %F{blue}%~%f'
+#RPROMPT = '%F{red}${vcs_info_msg_0_}%f$'
+PROMPT='%F{208}%n%f in %F{38}%~%f -> '
+
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+
+RPROMPT=\$vcs_info_msg_0_
+zstyle ':vcs_info:git:*' formats '%F{red}(%b)%r%f'
+zstyle ':vcs_info:*' enable git
+
+
+
 
 setopt autocd		# Automatically cd into typed directory.
 stty stop undef		# Disable ctrl-s to freeze terminal.
@@ -49,5 +68,4 @@ unset __conda_setup
 
 
 
-alias config='/usr/bin/git --git-dir=/Users/zzigak/.cfg/ --work-tree=/Users/zzigak'
 alias config='/usr/bin/git --git-dir=/Users/zzigak/.cfg/ --work-tree=/Users/zzigak'

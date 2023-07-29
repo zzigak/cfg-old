@@ -17,13 +17,13 @@ end
 --config.color_scheme = 'AdventureTime'
 config.adjust_window_size_when_changing_font_size = false
 -- color_scheme = 'Afterglow (Gogh)'
--- color_scheme = 'Wez',
-config.color_scheme = 'Github Dark'
-config.font = wezterm.font 'SF Mono'
+-- color_scheme = 'Wez'
+config.color_scheme = 'tokyonight'
+config.font = wezterm.font 'JetBrainsMono Nerd Font'
 config.font_size = 16.0
 config.hide_tab_bar_if_only_one_tab = true
 config.line_height = 1.0
-config.window_background_opacity = 0.80
+config.window_background_opacity = 1.0
 config.window_decorations = "RESIZE"
 config.inactive_pane_hsb = {
   saturation = 0.9,

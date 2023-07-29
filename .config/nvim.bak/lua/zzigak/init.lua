@@ -7,6 +7,6 @@ require("zzigak.telescope")
 require("zzigak.nvim-cmp")
 -- luaLine
 require('lualine').setup {
-    options = {theme = 'github_dark'}
+    options = {theme = 'dracula'}
 }
 

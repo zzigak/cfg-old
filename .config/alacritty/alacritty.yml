@@ -757,7 +757,7 @@ schemes:
   
 
 
-colors: *github_dark
+colors: *gruvbox
 
 
 

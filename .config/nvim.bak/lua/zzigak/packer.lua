@@ -16,10 +16,17 @@ return require('packer').startup(function(use)
  use 'lervag/vimtex'
   -- Themes
   use ({ 'projekt0n/github-nvim-theme', tag = 'v0.0.7' })
-  use 'folke/tokyonight.nvim'
+  use({ 'rose-pine/neovim', as = 'rose-pine' })
+--  use 'folke/tokyonight.nvim'
 --  use 'Mofiqul/dracula.nvim'
-  use "rebelot/kanagawa.nvim"
+--  use "rebelot/kanagawa.nvim"
   use "ellisonleao/gruvbox.nvim"
+  use 'shaunsingh/solarized.nvim'
+  use {
+    "ViViDboarder/wombat.nvim",
+    requires = "rktjmp/lush.nvim",
+}
+  use 'metalelf0/jellybeans-nvim'
 
   use({
     "iamcco/markdown-preview.nvim",
@@ -64,7 +71,7 @@ return require('packer').startup(function(use)
     use("hrsh7th/cmp-buffer")
     use("hrsh7th/cmp-path")
 
-    -- snippets
+    -- snippets, without ULTISNIP
     use('L3MON4D3/LuaSnip')
     use("saadparwaiz1/cmp_luasnip")
     use("rafamadriz/friendly-snippets")
