@@ -1,0 +1,44 @@
+import collections
+def partition(llist, left, right, pivotIndex):
+    pivotValue = llist[pivotIndex]
+    llist[pivotIndex], llist[right] = llist[right], llist[pivotIndex]
+    storeIndex = left
+
+    for exp in range(left,right-1):
+        if llist[exp] <= pivotValue:
+            llist[storeIndex], llist[exp] = llist[exp], llist[storeIndex] 
+            storeIndex+=1
+    llist[storeIndex], llist[right] = llist[right], llist[storeIndex] 
+
+    return storeIndex
+
+def quickselect(nums: list[int], k: int):
+    l = 0
+    r = len(nums)-1 
+   
+    ind = partition(nums, l, r, r)
+    if ind == k:
+        return llist[ind]
+    
+    while ind!=k:
+        if ind < k: 
+            ind = partition(nums, ind+1, r, r)
+        elif ind > k:
+            ind = partition(nums, l, ind-1, ind-1)
+
+    print(ind)
+
+       else:
+        return ind
+
+
+
+
+arr = [2,1,4,6,3,9,7]
+k = 2
+
+print(quickselect(arr,k))
+    
+    
+
+
