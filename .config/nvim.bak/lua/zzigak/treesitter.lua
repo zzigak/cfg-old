@@ -7,7 +7,7 @@ end
 
 configs.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "c", "lua", "cpp", "java", "python"  },
+  ensure_installed = { "c", "lua", "cpp", "java", "python", "ocaml"  },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
